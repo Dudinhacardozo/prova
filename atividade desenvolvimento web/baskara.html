@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form>
+        <label for="inpValorA">Valor x:</label>
+        <input type="number" id="inpValorA"><br>
+        <label for = "inpValorB">Valor Y :</label>
+        <input type="number" id="inpValorB"><br>
+        <label for = "inpValorC">Valor C:</label>
+        <input type="number" id="inpValorC">
+    </form>
+    <div id="resultado"></div>
+    <button onclick="calcularNumero()">Clique para o resultado</button>
+    <div></div>
+    <script>
+        function calcularNumero() {
+            const valA = Number(document.getElementById(`inpValorA`).value);
+            const valB = Number(document.getElementById(`inpValorB`).value);
+            const valC = Number(document.getElementById(`inpValorC`).value);
+
+            const delta = (valB ** 2 - (4 * valA * valC));
+            const baskara = (-valB + Math.sqrt(delta)) / (2 * valA);
+            const baskara2 = (-valB - Math.sqrt(delta)) / (2 * valA);
+            document.getElementById("resultado").innerHTML = `Baskara = ${baskara} <br> Baskara2 = ${baskara2}`;
+
+        }
+    </script>
+</body>
+
+</html>
